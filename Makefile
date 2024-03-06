@@ -16,7 +16,7 @@ install-argocd:
 	kubectl --kubeconfig $(KUBECONFIG_PATH) rollout status deploy/argocd-server -n argocd
 	@echo "Argo CD has been installed. Visit https://argoproj.github.io/argo-cd/getting_started/ for next steps."
 
-start-argocd-port-forward:
+start-argocd:
 	kubectl --kubeconfig=$(KUBECONFIG_PATH) port-forward svc/argocd-server -n argocd 8080:443
 	@echo "Argo CD API server port is now forwarded to localhost:8080."
 	
